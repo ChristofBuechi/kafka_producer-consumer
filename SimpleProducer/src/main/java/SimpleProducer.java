@@ -22,7 +22,7 @@ public class SimpleProducer {
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", "vmware:9092");
+        props.put("bootstrap.servers", "kafka:9092");
 
         //Set acknowledgements for producer requests.
         props.put("acks", "all");
@@ -49,7 +49,7 @@ public class SimpleProducer {
 
         for(int i = 0; i < 10_000; i++)
             producer.send(new ProducerRecord<>(topicName,
-                    Integer.toString(i), Integer.toString(i)));
+                    Integer.toString(i), Integer.toString(i))).get();
         System.out.println("Message sent successfully");
         producer.close();
     }
