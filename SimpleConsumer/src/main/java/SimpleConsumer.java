@@ -10,7 +10,7 @@ public class SimpleConsumer {
         String topicName = "myTopic";
         Properties props = new Properties();
 
-        props.put("bootstrap.servers", "vmware:9092");
+        props.put("bootstrap.servers", "kafka:9092");
         props.put("group.id", "test");
         props.put("enable.auto.commit", false);
         props.put("auto.offset.reset", "earliest");
